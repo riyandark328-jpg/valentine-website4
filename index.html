@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Happy Valentine's Day 🤍</title>
+
+<style>
+body{
+  margin:0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #ff6b81;
+  background-image: linear-gradient(45deg,#ff6b81 25%, #fff 25%, #fff 50%, #ff6b81 50%, #ff6b81 75%, #fff 75%, #fff 100%);
+  background-size: 40px 40px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+
+.card{
+  background:white;
+  width:350px;
+  padding:25px;
+  border-radius:20px;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+  animation:fade 0.5s;
+}
+
+button{
+  background:#ff4d6d;
+  border:none;
+  padding:10px 20px;
+  color:white;
+  border-radius:20px;
+  cursor:pointer;
+  margin-top:15px;
+}
+
+.hidden{display:none;}
+
+img{
+  width:100%;
+  border-radius:15px;
+  margin:8px 0;
+}
+
+p{
+  font-size:14px;
+  text-align:justify;
+}
+
+@keyframes fade{
+  from{opacity:0; transform:scale(0.9);}
+  to{opacity:1; transform:scale(1);}
+}
+</style>
+</head>
+
+<body>
+
+<audio id="music" loop>
+  <source src="lagu.mp3" type="audio/mpeg">
+</audio>
+
+<div class="card" id="page1">
+  <h2>Happy Valentine’s Day Sayanggg 🤍</h2>
+  <button onclick="nextPage(1)">Next →</button>
+</div>
+
+<div class="card hidden" id="page2">
+  <h3>For You 💌</h3>
+  <p>
+  Happy Valentine’s Day sayanggg 🤍<br><br>
+
+  Mungkin aku bukan orang yang paling romantis, bukan juga yang paling sempurna buat kamu. Tapi satu hal yang pasti, kamu selalu berusaha jadi yang terbaik untuk hubungan kita. Makasih yaa udah tetap bertahan, udah sabar ngadepin sifat aku, dan tetap memilih aku setiap hari 🤍<br><br>
+
+  Valentine tahun ini mungkin sederhana, tanpa hadiah mewah atau coklat mahal. Tapi semoga kamu tau, cinta aku ke kamu nggak pernah sederhana. Kamu adalah rumah yang selalu ingin aku tuju, alasan kenapa aku tetap kuat, dan alasan kenapa aku percaya kalau cinta itu benar-benar ada.<br><br>
+
+  Semoga kita tetap bersama, bukan cuma di Valentine kali ini, tapi di banyak Valentine lainnya. Jangan bosen sama aku yaa, karena aku masih mau sama kamu — hari ini, besok, dan seterusnya 🤍🤍💐💐💐
+  <br><br>
+  #Fajriimup 🦖<br>
+  #elyaaLebihImup 🦖
+  </p>
+  <button onclick="nextPage(2)">Next →</button>
+</div>
+
+<div class="card hidden" id="page3">
+  <h3>Our Beautiful Memories 📸</h3>
+  <img src="foto1.jpg">
+  <img src="foto2.jpg">
+  <button onclick="nextPage(3)">Finish 💖</button>
+</div>
+
+<div class="card hidden" id="page4">
+  <h2>🤍 I Love You Always 🤍</h2>
+</div>
+
+<script>
+function nextPage(num){
+  document.getElementById("page"+num).classList.add("hidden");
+  document.getElementById("page"+(num+1)).classList.remove("hidden");
+
+  if(num === 1){
+    document.getElementById("music").play();
+  }
+}
+</script>
+
+</body>
+</html>
+
